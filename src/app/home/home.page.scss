@@ -1,28 +1,54 @@
-#container {
+ion-header {
+  ion-toolbar {
+    background-color: #3498db; 
+    color: #333; 
+    ion-title {
+      font-size: 1.5em;
+      font-weight: bold; 
+      text-align: center; 
+    }
+  }
+}
+.perfil-container{
+  margin: 15px;
+}
+
+.perfil-icon{
+  margin-right: 20px;
+  font-size: 35px;
+}
+
+.perfil-nombre{
+  font-size: 15px;
+}
+
+.app-container {
+  margin: 60px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+.carrusel{
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+h2 {
+  color: #333;
+  font-weight: bold; 
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
 
-  color: #8c8c8c;
+h3 {
+  color: #3498db;
+}
 
+p {
   margin: 0;
 }
-
-#container a {
-  text-decoration: none;
-}
-
