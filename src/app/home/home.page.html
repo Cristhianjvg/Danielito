@@ -1,15 +1,51 @@
+<!-- app/app.component.html -->
+
 <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>DANIELITOAPP</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="perfil-container">
+    <ion-icon name="person-circle-outline" class="perfil-icon"></ion-icon>
+    <span class="perfil-nombre">María Alejandra Paute Eras</span>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <section class="carrusel">
+    <h2>Galería de Imágenes</h2>
+    <div class="slide">
+      <img src="imagen1.jpg" alt="Imagen 2">
+    </div>
+  </section>
+
+  <div class="app-container">
+    <section class="noticias">
+      <h2>Noticias Recientes</h2>
+      <article>
+        <h3>Título de la Noticia 1</h3>
+        <p>Descripción breve de la noticia. Puede contener información interesante.</p>
+      </article>
+      <article>
+        <h3>Título de la Noticia 2</h3>
+        <p>Otra noticia emocionante para compartir con la comunidad escolar.</p>
+      </article>
+    </section>
+
+    <section class="eventos">
+      <h2>Próximos Eventos</h2>
+      <article>
+        <h3>Evento 1</h3>
+        <p>Fecha: 10 de marzo de 2024</p>
+        <p>Lugar: Salón de actos</p>
+        <p>Descripción del evento.</p>
+      </article>
+      <article>
+        <h3>Evento 2</h3>
+        <p>Fecha: 15 de marzo de 2024</p>
+        <p>Lugar: Patio de la escuela</p>
+        <p>Otra descripción interesante del evento.</p>
+      </article>
+    </section>
   </div>
 </ion-content>
