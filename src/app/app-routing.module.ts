@@ -15,6 +15,15 @@ const routes: Routes = [
     path: 'tab-principal',
     loadChildren: () => import('./tab-principal/tab-principal.module').then( m => m.TabPrincipalPageModule)
   },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
+
   
 ];
 
