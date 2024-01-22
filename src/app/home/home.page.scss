@@ -23,7 +23,7 @@ ion-header {
 }
 
 .app-container {
-  margin: 60px;
+  margin: 5px;
 }
 
 section {
@@ -41,7 +41,7 @@ h2 {
 article {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 15px;
 }
 
@@ -51,4 +51,25 @@ h3 {
 
 p {
   margin: 0;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.image-card {
+  width: 30%; /* Ajusta según sea necesario */
+  margin: 10px;
+  text-align: center;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+}
+
+.image-card p {
+  margin: 5px 0;
 }
