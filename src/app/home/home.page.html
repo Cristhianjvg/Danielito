@@ -1,4 +1,4 @@
-<!-- app/app.component.html -->
+
 
 <ion-header [translucent]="true">
   <ion-toolbar>
@@ -8,43 +8,86 @@
 
 <ion-content [fullscreen]="true">
   <div class="perfil-container">
-    <ion-icon name="person-circle-outline" class="perfil-icon"></ion-icon>
-    <span class="perfil-nombre">María Alejandra Paute Eras</span>
+    <ion-item [button]="true">
+      <ion-icon color="black" slot="start" name="person-circle-outline" size="large"></ion-icon>
+      <i class="fi fi-sr-user"></i>
+      <ion-label>María Alejandra Paute Eras</ion-label>
+    </ion-item>
   </div>
 
   <section class="carrusel">
-    <h2>Galería de Imágenes</h2>
     <div class="slide">
-      <img src="imagen1.jpg" alt="Imagen 2">
+      <h2>Unidad Educativa Fiscomisional
+        "Daniel Álvarez Burneo"</h2>
+      <img src="../../assets/imagen1.jpg" alt="Imagen 2">
     </div>
   </section>
+  <section class="carrusel">
+    <h2>ABANDERADA, PORTA ESTANDARTES Y ESCOLTAS
+      AÑO LECTIVO 2023-2024</h2>
+    <div class="slide">
+      <img src="../../assets/imagen2.jpg" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="../../assets/imagen3.jpg" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="../../assets/imagen4.jpg" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="../../assets/imagen5.jpg" alt="Imagen 2">
+    </div>
+  </section>
+  <section class="carrusel">
+    <h2>Autoridades de la UEF "Daniel Alvarez Burneo"</h2>
+    <div class="image-container">
+      <div class="image-card">
+        <img src="../../assets/persona1.jpg" alt="Imagen 1">
+        <p>Hno. Eduardo Bartolomé Martínez, RECTOR</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona2.jpg" alt="Imagen 2">
+        <p>Mgs. Marlene Euliria Sánchez González, VICERRECTORA</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona3.jpg" alt="Imagen 2">
+        <p>Mgs. Diego Fabián Benavides, INSPECTOR GENERAL</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona4.jpg" alt="Imagen 2">
+        <p>Mgs. Flor del Rocío Herrera Mejía, COORDINADORA DE SECCIÓN BÁSICA</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona5.jpg" alt="Imagen 2">
+        <p>Eco. Albita Isabel Galvez Moreno, COORDINADORA DE SECCIÓN CIENCIAS</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona6.jpg" alt="Imagen 7">
+        <p>Tlgo. Jorge Aníbal Pogo Guamán, COORDINADOR DE SECCIÓN TÉCNICAS</p>
+      </div>
+      <div class="image-card">
+        <img src="../../assets/persona7.jpg" alt="Imagen 2">
+        <p>Hno. Carlos Adolfo Moreno Veintimilla, COORDINADOR DE PASTORAL DE LA UEF "DAB" </p>
+      </div>
+    </div>
+  </section> -->
 
   <div class="app-container">
     <section class="noticias">
-      <h2>Noticias Recientes</h2>
+      <h2>COMUNICADO</h2>
       <article>
-        <h3>Título de la Noticia 1</h3>
-        <p>Descripción breve de la noticia. Puede contener información interesante.</p>
-      </article>
-      <article>
-        <h3>Título de la Noticia 2</h3>
-        <p>Otra noticia emocionante para compartir con la comunidad escolar.</p>
-      </article>
-    </section>
-
-    <section class="eventos">
-      <h2>Próximos Eventos</h2>
-      <article>
-        <h3>Evento 1</h3>
-        <p>Fecha: 10 de marzo de 2024</p>
-        <p>Lugar: Salón de actos</p>
-        <p>Descripción del evento.</p>
-      </article>
-      <article>
-        <h3>Evento 2</h3>
-        <p>Fecha: 15 de marzo de 2024</p>
-        <p>Lugar: Patio de la escuela</p>
-        <p>Otra descripción interesante del evento.</p>
+        <p>Se comunica a los estudiantes que han ingresado a la Unidad Educativa
+          Fiscomisional Daniel Álvarez Burneo a partir del año lectivo 2020–2021
+          y a sus representantes que, el uniforme institucional cambió a partir
+          de junio de 2019. Por tal razón, dígnense reconocer el modelo oficial
+          que se expone en el Almacén Estudiantil que la Fundación Álvarez ha
+          puesto al servicio de la Institución (ubicado en los bajos del Coliseo
+          Hermano Santiago Fernández García). Este uniforme se utilizará cuando
+          las autoridades del Ministerio de Educación dispongan el retorno a clases
+          presenciales.
+        </p>
+        <h1>Dr. Alonso Guamán Castillo</h1>
+        <h1>RECTOR</h1>
       </article>
     </section>
   </div>
