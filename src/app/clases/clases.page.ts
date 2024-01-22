@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { MateriasPage } from '../materias/materias.page';
 
 @Component({
   selector: 'app-clases',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClasesPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  redirectToMateria() {
+    this.navCtrl.navigateForward('/materias');
   }
 
 }

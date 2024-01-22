@@ -43,7 +43,7 @@
   </ion-list>
 
   <ion-list [inset]="true">
-    <ion-item [button]="true" detail="false" id="present-alert">
+    <ion-item [button]="true" detail="false" (click)="redirectToMateria()">
       <div class="unread-indicator-wrapper" slot="start">
         <div class="unread-indicator"></div>
       </div>
@@ -59,13 +59,7 @@
 
       </div>
     </ion-item>
-    <ion-alert
-      trigger="present-alert"
-      header="A Short Title Is Best"
-      subHeader="A Sub Header Is Optional"
-      message="A message should be a short, complete sentence."
-    ></ion-alert>
-    
+
     <ion-item [button]="true" detail="false">
       <div class="unread-indicator-wrapper" slot="start">
         <div class="unread-indicator"></div>
