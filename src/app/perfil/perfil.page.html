@@ -1,15 +1,12 @@
-<div class="container">
+<ion-header class="container">
   <div class="profile-info">
     <div class="container-img" style="display: flex; justify-content: center; align-items: center;">
       <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="profile-pic">
     </div>    
-    <h3 style="text-align: center;">Maria Alejandra Paute</h3>
+    <h3 style="text-align: center;">Cristhian Villamarin</h3>
     <p style="text-align: center;">2do de Bachillerato</p>
+    <p style="text-align: center;">1105608424</p>
   </div>
-  <button class="cssbuttons-io-button">
-    <svg viewBox="0 0 640 512" fill="white" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"></path></svg>
-     <span>Upload</span>
-   </button>
 
   <div class="container-info" style="display: flex;">
     <div class="followers" style="margin: 10px;">
@@ -27,28 +24,68 @@
     </div>
 
   </div>
-  
-  <div class="form__group field">
-    <input type="input" class="form__field" placeholder="Name" required="">
-    <label for="name" class="form__label">Name</label>
-  </div>
-  <div class="form__group field">
-    <input type="input" class="form__field" placeholder="Email" required="">
-    <label for="Email" class="form__label">Email</label>
-  </div>
-  <div class="form__group field">
-    <input type="input" class="form__field" placeholder="Username" required="">
-    <label for="Username" class="form__label">Username</label>
-  </div>
+</ion-header>
 
-  <div style="width: 380px; display: flex; align-content: end; justify-content: end;">
-    <button>
-      Enviar
-      <div class="arrow-wrapper">
-          <div class="arrow"></div>
-      </div>
-  </button>
+<ion-content [fullscreen]="true">
+  <div class="form__group field">
+    <input type="input" class="form__field" placeholder="Email" required="" autocomplete="off">
+    <label for="Email" class="form__label">cvillamarinutpl.edu.ec</label>
   </div>
+  <div class="form__group field">
+    <input type="input" class="form__field" placeholder="Username" required=""  autocomplete="off">
+    <label for="Username" class="form__label">villa</label>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calificaciones</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <table>
+        <tr>
+          <th>Materia</th>
+          <th>Primer Bimestre</th>
+          <th>Segundo Bimestre</th>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 25px; padding: 8px;">Matemáticas</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Ciencias Naturales</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">9</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Ciencias Sociales</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Ingles</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">9</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Religion</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">9</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Educacion Fisica</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">9</td>
+        </tr>
+        <tr>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">Emprendimiento</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">8</td>
+          <td style="text-align: center; line-height: 10px; padding: 8px;">9</td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
   
 
-</div>

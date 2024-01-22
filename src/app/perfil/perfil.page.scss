@@ -1,3 +1,5 @@
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -20,12 +22,13 @@
 }
 
 .profile-info{
-  height: 300px;
+  height: 200px;
 }
 
 .container-img{
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
+  margin-left: 55px;
 }
 
 .profile-img {
