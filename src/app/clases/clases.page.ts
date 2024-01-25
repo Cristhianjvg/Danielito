@@ -32,11 +32,7 @@ export class ClasesPage implements OnInit {
       }
     });
   }
-
-  redirectToMateria() {
-    this.navCtrl.navigateForward('/materias');
-  }
-
+  
   loadJsonData() {
     // Obtiene el estudiante autenticado desde el servicio
     const estudianteAutenticado = this.authService.getEstudianteAutenticado();

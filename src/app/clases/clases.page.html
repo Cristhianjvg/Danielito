@@ -39,7 +39,8 @@
 
   <!--Materias del estudiante-->
   <ion-list [inset]="true">
-    <ion-item *ngFor="let materia of materias" [button]="true" detail="false">
+    <!--<ion-item *ngFor="let materia of materias" [button]="true" detail="false">-->
+    <ion-item *ngFor="let materia of materias" [routerLink]="['/materias', materia]">
       <div class="unread-indicator-wrapper" slot="start">
         <ion-icon
           color="primary"
