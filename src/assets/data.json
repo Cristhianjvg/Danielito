@@ -67,6 +67,30 @@
             "Educación Religiosa"
           ]
       }      
-    ]
+    ],
+    "CalendarioEstudiantil": {
+      "fechasEspeciales": [
+        {
+          "fecha": "2024-02-14",
+          "nombre": "Día de San Valentin"
+        },
+        {
+          "fecha": "2024-02-13",
+          "nombre": "Feriado Carnaval"
+        },
+        {
+          "fecha": "2024-03-29",
+          "nombre": "Viernes Santo"
+        },
+        {
+          "fecha": "2024-04-13",
+          "nombre": "Día del Maestro"
+        },
+        {
+          "fecha": "2024-05-01",
+          "nombre": "Día del Trabajo"
+        }
+      ]
+    }
   }
   

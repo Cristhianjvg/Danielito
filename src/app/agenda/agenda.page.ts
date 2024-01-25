@@ -3,6 +3,7 @@ import { CalendarComponent, CalendarMode } from 'ionic2-calendar';
 import { AlertController, ModalController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { CalModalPage } from '../cal-modal/cal-modal.page';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,12 +12,11 @@ import { CalModalPage } from '../cal-modal/cal-modal.page';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage implements OnInit {
-
   eventSource = [];
   viewTitle: string | undefined;
 
   calendar = {
-    mode: 'month'as CalendarMode,
+    mode: 'month' as CalendarMode,
     currentDate: new Date(),
   };
 
@@ -24,15 +24,52 @@ export class AgendaPage implements OnInit {
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent | undefined;
 
-
   constructor(
     private alertCtrl: AlertController,
     @Inject(LOCALE_ID) private locale: string,
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
+    this.loadSpecialDates();
   }
+
+  loadSpecialDates() {
+    this.http.get('assets/data.json').subscribe((data: any) => {
+      if (
+        data &&
+        data.CalendarioEstudiantil &&
+        data.CalendarioEstudiantil.fechasEspeciales
+      ) {
+        this.addSpecialDatesToEventSource(
+          data.CalendarioEstudiantil.fechasEspeciales
+        );
+      }
+    });
+  }
+
+  addSpecialDatesToEventSource(specialDates: { fecha: string, nombre: string }[]) {
+    const events = [];
+    for (const { fecha, nombre } of specialDates) {
+      const date = new Date(fecha + 'T00:00:00Z');
+      const startTime = new Date(date);
+      const endTime = new Date(date);
+      endTime.setUTCDate(date.getUTCDate() + 1);
+  
+      events.push({
+        title: nombre, // Utilizamos el nombre del evento en lugar de 'Evento Especial'
+        startTime: startTime,
+        endTime: endTime,
+        allDay: true,
+      });
+    }
+    this.eventSource = events;
+    this.myCal.loadEvents();
+  }
+  
+  
+
   next() {
     this.myCal.slideNext();
   }
@@ -61,67 +98,6 @@ export class AgendaPage implements OnInit {
     alert.present();
   }
 
-  createRandomEvents() {
-    var events = [];
-    for (var i = 0; i < 50; i += 1) {
-      var date = new Date();
-      var eventType = Math.floor(Math.random() * 2);
-      var startDay = Math.floor(Math.random() * 90) - 45;
-      var endDay = Math.floor(Math.random() * 2) + startDay;
-      var startTime;
-      var endTime;
-      if (eventType === 0) {
-        startTime = new Date(
-          Date.UTC(
-            date.getUTCFullYear(),
-            date.getUTCMonth(),
-            date.getUTCDate() + startDay
-          )
-        );
-        if (endDay === startDay) {
-          endDay += 1;
-        }
-        endTime = new Date(
-          Date.UTC(
-            date.getUTCFullYear(),
-            date.getUTCMonth(),
-            date.getUTCDate() + endDay
-          )
-        );
-        events.push({
-          title: 'All Day - ' + i,
-          startTime: startTime,
-          endTime: endTime,
-          allDay: true,
-        });
-      } else {
-        var startMinute = Math.floor(Math.random() * 24 * 60);
-        var endMinute = Math.floor(Math.random() * 180) + startMinute;
-        startTime = new Date(
-          date.getFullYear(),
-          date.getMonth(),
-          date.getDate() + startDay,
-          0,
-          date.getMinutes() + startMinute
-        );
-        endTime = new Date(
-          date.getFullYear(),
-          date.getMonth(),
-          date.getDate() + endDay,
-          0,
-          date.getMinutes() + endMinute
-        );
-        events.push({
-          title: 'Event - ' + i,
-          startTime: startTime,
-          endTime: endTime,
-          allDay: false,
-        });
-      }
-    }
-    this.eventSource = events;
-  }
-
   removeEvents() {
     this.eventSource = [];
   }
@@ -129,11 +105,11 @@ export class AgendaPage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: CalModalPage,
       cssClass: 'cal-modal',
-      backdropDismiss: false
+      backdropDismiss: false,
     });
-  
+
     await modal.present();
-  
+
     modal.onDidDismiss().then((result) => {
       if (result.data && result.data.event) {
         let event = result.data.event;
@@ -159,5 +135,4 @@ export class AgendaPage implements OnInit {
       }
     });
   }
-
 }
