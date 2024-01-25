@@ -1,0 +1,72 @@
+{
+    "estudiantes": [
+      {
+        "nombre": "Edgar David Martínez Pucha",
+        "cedula": "1105595480",
+        "ano": "3° de Bachillerato A",
+        "codigo": "2014-0399",
+        "especialidad": "Mecánica",
+        "materias": [
+            "Cálculo Diferencial",
+            "Literatura Clásica",
+            "Historia Antigua",
+            "Geografía Política",
+            "Historia del Cine",
+            "Ética Profesional",
+            "Filosofía del Derecho",
+            "Redacción Académica",
+            "Inglés Literario",
+            "Artes Visuales",
+            "Educación Física Avanzada",
+            "Gestión Cultural",
+            "Psicología Social"
+          ]
+      },
+      {
+        "nombre": "Jandri Giovanni Villavicencio",
+        "cedula": "1400994299",
+        "ano": "2° de Bachillerato A",
+        "codigo": "2013-0399",
+        "especialidad": "Ciencias",
+        "materias": [
+            "Álgebra",
+            "Química Orgánica",
+            "Literatura Universal",
+            "Geografía Mundial",
+            "Historia del Arte",
+            "Ética y Ciudadanía",
+            "Filosofía Contemporánea",
+            "Gramática Avanzada",
+            "Inglés Avanzado",
+            "Arte y Cultura",
+            "Educación Física Avanzada",
+            "Gestión Empresarial",
+            "Desarrollo Sostenible"
+        ]
+      },
+      {
+        "nombre": "Azalia Belen Ruiz Capa",
+        "cedula": "1712345678",
+        "ano": "1° de Bachillerato H",
+        "codigo": "2020-0339",
+        "especialidad": "Ciencias",
+        "materias": [
+            "Matemáticas",
+            "Física",
+            "Química",
+            "Biología",
+            "Historia",
+            "Educación para la Ciudadanía",
+            "Filosofía",
+            "Lengua y Literatura",
+            "Inglés",
+            "Educación Cultural y Artística",
+            "Educación Física",
+            "Emprendimiento y Gestión",
+            "Acompañamiento Integral",
+            "Educación Religiosa"
+          ]
+      }      
+    ]
+  }
+  

@@ -1,0 +1,35 @@
+/* Estilos para las primeras filas de cada ion-row */
+ion-content {
+    --background: transparent; /* Fondo transparente */
+  }
+ion-item ion-row:first-child {
+    background-color: #337AB7;
+  }
+  
+  /* Estilos para las segundas filas de cada ion-row */
+  ion-item ion-row:not(:first-child) {
+    background-color: #ABBEDE;
+  }
+  
+  /* Alineación centrada del texto en las columnas */
+  ion-col {
+    text-align: center;
+    border-right: 1px solid #ddd; /* Línea divisoria derecha */
+    padding: 8px; /* Espaciado interno */
+  }
+  
+  /* Estilo para la última columna (no se aplica borde derecho) */
+  ion-col:last-child {
+    border-right: none;
+  }
+  
+  /* Línea divisoria entre las filas */
+  ion-row {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Elimina el borde inferior de la última fila */
+  ion-row:last-child {
+    border-bottom: none;
+  }
+  

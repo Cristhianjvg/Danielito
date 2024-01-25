@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MateriasPageRoutingModule } from './materias-routing.module';
 
 import { MateriasPage } from './materias.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MateriasPageRoutingModule
+    MateriasPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [MateriasPage]
 })
