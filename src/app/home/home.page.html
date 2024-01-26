@@ -7,13 +7,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="perfil-container">
-    <ion-item [button]="true">
-      <ion-icon color="black" slot="start" name="person-circle-outline" size="large"></ion-icon>
-      <i class="fi fi-sr-user"></i>
-      <ion-label>María Alejandra Paute Eras</ion-label>
-    </ion-item>
-  </div>
+  <ion-list [inset]="true">
+    <ng-container *ngFor="let estudiante of estudiantes">
+      <ng-container
+        *ngFor="let caracteristica of ['nombre']"
+      >
+        <ion-item>
+          <ion-icon
+            [color]="getIconoColor(caracteristica)"
+            slot="start"
+            [name]="getIconoNombre(caracteristica)"
+            size="large"
+          ></ion-icon>
+          <ion-label>{{ estudiante[caracteristica] }}</ion-label>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+  </ion-list>
 
   <section class="carrusel">
     <div class="slide">
@@ -70,7 +80,7 @@
         <p>Hno. Carlos Adolfo Moreno Veintimilla, COORDINADOR DE PASTORAL DE LA UEF "DAB" </p>
       </div>
     </div>
-  </section> -->
+  </section> 
 
   <div class="app-container">
     <section class="noticias">
