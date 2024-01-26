@@ -35,6 +35,7 @@ private estudianteAutenticado: any;
 
 // Agrega este método para obtener el estudiante autenticado
 getEstudianteAutenticado(): any {
+  console.log(this.estudianteAutenticado)
   return this.estudianteAutenticado;
 }
 
