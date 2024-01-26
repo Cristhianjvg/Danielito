@@ -6,138 +6,63 @@
 
 <ion-content [fullscreen]="true" color="light">
   <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
+    <ion-toolbar> </ion-toolbar>
   </ion-header>
 
-    <ion-item>
-      <ion-select label="Año Academico" label-placement="floating" fill="outline">
-        <ion-select-option value="apple">2023 - 2024</ion-select-option>
-        <ion-select-option value="banana">2022 - 2023</ion-select-option>
-        <ion-select-option value="orange">2021 - 2022</ion-select-option>
-      </ion-select>
-    </ion-item>
+  <ion-item>
+    <ion-select label="Año Academico" label-placement="floating" fill="outline">
+      <ion-select-option value="apple">2023 - 2024</ion-select-option>
+      <ion-select-option value="banana">2022 - 2023</ion-select-option>
+      <ion-select-option value="orange">2021 - 2022</ion-select-option>
+    </ion-select>
+  </ion-item>
 
+  <!--Datos del estudiante-->
   <ion-list [inset]="true">
-    <ion-item [button]="true">
-      <ion-icon color="danger" slot="start" name="person-circle-outline" size="large"></ion-icon>
-      <i class="fi fi-sr-user"></i>
-      <ion-label>Edgar David Martínez Pucha</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="tertiary" slot="start" name="card-outline" size="large"></ion-icon>
-      <ion-label>1105595480</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="success" slot="start" name="school-outline" size="large"></ion-icon>
-      <ion-label>3° de Bachillerato A</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="warning" slot="start" name="id-card-outline" size="large"></ion-icon>
-      <ion-label>2014-0399</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="medium" slot="start" name="git-branch-outline" size="large"></ion-icon>
-      <ion-label>Mecánica</ion-label>
-    </ion-item>
+    <ng-container *ngFor="let estudiante of estudiantes">
+      <ng-container
+        *ngFor="let caracteristica of ['nombre', 'cedula', 'ano', 'codigo', 'especialidad']"
+      >
+        <ion-item>
+          <ion-icon
+            [color]="getIconoColor(caracteristica)"
+            slot="start"
+            [name]="getIconoNombre(caracteristica)"
+            size="large"
+          ></ion-icon>
+          <ion-label>{{ estudiante[caracteristica] }}</ion-label>
+        </ion-item>
+      </ng-container>
+    </ng-container>
   </ion-list>
+  <!--Cierra Datos del estudiante-->
 
+  <!--Materias del estudiante-->
   <ion-list [inset]="true">
-    <ion-item [button]="true" detail="false" (click)="redirectToMateria()">
+    <!--<ion-item *ngFor="let materia of materias" [button]="true" detail="false">-->
+    <ion-item *ngFor="let materia of materias" [routerLink]="['/materias', materia]">
       <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
+        <ion-icon
+          color="primary"
+          slot="icon-only"
+          name="school-outline"
+          size="large"
+        ></ion-icon>
       </div>
       <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Matemáticas</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-
-      </div>
-    </ion-item>
-
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Lengua y Literatura</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Ciencias Naturales</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Estudios Sociales</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Ingles</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <ion-icon color="primary" slot="start" name="school-outline" size="large"></ion-icon>
-        <ion-text><strong>.    Educación Física</strong></ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          <strong>Profesor/a:</strong> Nombre Docente <br> <strong>Modalidad:</strong> Presencial<br> <strong>Horas Semanales:</strong> 8
-        </ion-note>
+        <ion-text><strong>{{ materia }}</strong></ion-text>
+        <div class="ion-text-wrap">
+          <ion-note color="medium">
+            <strong>Profesor/a:</strong> Nombre Docente <br />
+            <strong>Modalidad:</strong> Presencial<br />
+            <strong>Horas Semanales:</strong> 8
+          </ion-note>
+        </div>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
         <ion-icon color="medium" name="chevron-forward"></ion-icon>
       </div>
     </ion-item>
   </ion-list>
+  <!--Cierra Materias del estudiante-->
 </ion-content>

@@ -6,15 +6,15 @@
         <ion-img src="assets/logoMarista2.png"></ion-img>
         <h2>Sign in</h2>
         <div class="inputBox">
-          <input type="text" required="required">
+          <input type="text" required="required" name="cedula" [(ngModel)]="cedula">
           <span>Cédula</span>
           <i></i>
         </div>
         <div class="inputBox">
-          <input type="password" required="required">
+          <input type="password" required="required" name="password" [(ngModel)]="password">
           <span>Contraseña</span>
           <i></i>
-        </div>    
+        </div>
         <input type="submit" value="Login" (click)="redirectToHome()">
       </form>
     </div>

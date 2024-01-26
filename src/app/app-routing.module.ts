@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
   },
   {
-    path: 'materias',
+    path: 'materias/:materia',
     loadChildren: () => import('./materias/materias.module').then( m => m.MateriasPageModule)
   },
   

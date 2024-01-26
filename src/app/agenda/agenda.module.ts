@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 
 import localeDe from '@angular/common/locales/es-EC';
 registerLocaleData(localeDe);
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ registerLocaleData(localeDe);
     IonicModule,
     AgendaPageRoutingModule,
     NgCalendarModule,
-    CalModalPageModule
+    CalModalPageModule,
+    HttpClientModule
   ],
   declarations: [AgendaPage],
   providers: [

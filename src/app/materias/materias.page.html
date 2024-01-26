@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Materias</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" >
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Materias</ion-title>
@@ -14,105 +8,149 @@
   <ion-item>
     <ion-icon color="medium" slot="start" name="person-circle-outline" size="large"></ion-icon>
     <ion-label>
-      <strong>Edgar David Martínez Pucha</strong><br>
-      <ion-text>Matematicas</ion-text><br />
+      <strong>{{ estudiantes[0]['nombre'] }}</strong><br>
+      <ion-text>{{ materia }}</ion-text><br />
       <ion-note color="medium" class="ion-text-wrap">
-        Décimo Grado de EGB
-      </ion-note>    
+        {{ estudiantes[0]['ano'] }}
+      </ion-note>
     </ion-label>
   </ion-item>
 
+  <!-- Lista de trimestres -->
   <ion-list [inset]="true">
     <ion-item [button]="true" id="open-modal" expand="block">
       <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>1er Parcial 1er Quimestre</ion-label>
+      <ion-label>1er. Trimestre</ion-label>
     </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>2do Parcial 1er Quimestre</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>3er Parcial 1er Quimestre</ion-label>
-    </ion-item><hr><hr>
 
     <ion-item [button]="true">
       <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>1er Parcial 2do Quimestre</ion-label>
+      <ion-label>2do. Trimestre</ion-label>
     </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>2do Parcial 2do Quimestre</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>3er Parcial 2do Quimestre</ion-label>
-    </ion-item><hr><hr>
 
     <ion-item [button]="true">
       <ion-icon color="danger" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Final</ion-label>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="danger" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Titulación</ion-label>
+      <ion-label>3er. Trimestre</ion-label>
     </ion-item>
   </ion-list>
 
+  <!-- Contenido de la modalidad -->
   <ion-modal #modal trigger="open-modal">
     <ng-template>
       <ion-content>
         <ion-toolbar>
-          <ion-title>Notas 1er Parcial 1er Quimestre</ion-title>
+          <ion-title>Notas 1er. Trimestre</ion-title>
           <ion-buttons slot="end">
             <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
+
+        <!-- Lista de insumos -->
         <ion-list>
+          <!-- Aportes -->
           <ion-item>
             <ion-label>
-              <h2>Insumo 1</h2>
-              <p>9.90</p>
+              <h2>Aportes</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">IndV</ion-col>
+                  <ion-col class="ion-text-center">Grup</ion-col>
+                  <ion-col class="ion-text-center">90%</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">2.5</ion-col>
+                  <ion-col class="ion-text-center">5</ion-col>
+                  <ion-col class="ion-text-center">5</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
+
+          <!-- Proyectos -->
           <ion-item>
             <ion-label>
-              <h2>Insumo 2</h2>
-              <p>9.25</p>
+              <h2>Proyectos</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center" colspan="2">Nota 5%</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">10</ion-col>
+                  <ion-col class="ion-text-center">0.5</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
+
+          <!-- Examen -->
           <ion-item>
             <ion-label>
-              <h2>Insumo 3</h2>
-              <p>9.71</p>
+              <h2>Examen</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center" colspan="2">Nota 5%</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">6.50</ion-col>
+                  <ion-col class="ion-text-center">0.32</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
+
+          <!-- Nota Promedio -->
           <ion-item>
             <ion-label>
-              <h2>Promedio</h2>
-              <p>9.62</p>
+              <h2>Nota Promedio</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">Prom</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">60.1</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
+
+          <!-- Refuerzo Académico -->
           <ion-item>
             <ion-label>
-              <h2>Refuerzo Academico</h2>
-              <p>--</p>
+              <h2>Refuerzo Académico</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">Nota</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">7.99</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
+
+          <!-- 1er Trimestre -->
           <ion-item>
             <ion-label>
-              <h2>1er Parcial</h2>
-              <p>9.62</p>
+              <h2>1er. Trimestre</h2>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">NOTA</ion-col>
+                  <ion-col class="ion-text-center">Cuali</ion-col>
+                  <ion-col class="ion-text-center">Comp</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center">7.00</ion-col>
+                  <ion-col class="ion-text-center">AAR</ion-col>
+                  <ion-col class="ion-text-center">B</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-label>
           </ion-item>
-          <ion-item>
-            <ion-label>
-              <h2>Comportamiento</h2>
-              <p>B</p>
-            </ion-label>
-          </ion-item>
+
+          <!-- Resto del contenido -->
+          <!-- ... -->
         </ion-list>
-      </ion-content>  
+      </ion-content>
     </ng-template>
   </ion-modal>
 </ion-content>

@@ -8,12 +8,14 @@ import { ClasesPageRoutingModule } from './clases-routing.module';
 
 import { ClasesPage } from './clases.page';
 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClasesPageRoutingModule
+    ClasesPageRoutingModule,
+    HttpClientModule  
   ],
   declarations: [ClasesPage]
 })
